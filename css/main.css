@@ -1,0 +1,121 @@
+ * {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+table {
+    background-color: white; border-collapse: collapse; width: 100%;
+}
+
+td, th {
+    border: black solid 4px; padding: 4px; text-decoration: none;
+}
+
+th {
+    background-color: red; color: #ffc552; font: 16px; font-weight: bold;
+} 
+
+ul { 
+    margin-left: 20px;
+}
+
+body{
+    background-color: #52c2ff; color: black; font-family:Verdana, Geneva, Tahoma, sans-serif; line-height: 200%; background-image: url(../images/back.png);
+}
+
+h1 {
+    font-size: 40px; text-align: center; color: black; text-transform: uppercase;
+} 
+
+h2 {
+    font-size: 30px; color: black; margin-top: 40px; margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px; color: black; text-align: center;
+}
+
+p, h1, h2, h3 {
+    margin-top: 10px; margin-bottom: 10px;
+}
+
+img {
+    border-width: 5px; border-color: black; border-style: solid; margin-top: 30px;
+}
+
+#container {
+    background-color: #ffc552; width: 850px; padding: 25px ; margin-left: auto; margin-right: auto; border-left: 10px black solid; border-right: 10px black solid; min-height: 750px; 
+}
+
+
+footer {
+    border-top: black 10px solid; 
+}
+
+.titleImage {
+    text-align: center;
+}
+
+a:link{
+    color: white;
+} 
+
+a:hover{
+    background-color: white
+} 
+
+a:visited{
+    color: #ffc552;
+} 
+
+a:active{
+    color: red;
+} 
+
+nav {
+    background-color: red;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Use flexbox to make the list items appear horizontally */
+    justify-content: center; /* Center the list items horizontally */
+}
+
+nav ul li {
+    margin-left: 50px; margin-right: 50px;
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.resultImage {
+    float: bottom;
+}
+
+.marginTitle {
+    margin-top: 40px; margin-bottom: 40px;
+} 
+
+figure {
+    display: inline-block;
+}
+
+#player2choice {
+    margin-left: 50px;
+}
+
+#personchoice {
+    margin-left: 50px;
+}
+
+#center {
+    text-align: center;
+}
