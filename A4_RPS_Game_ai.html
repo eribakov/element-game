@@ -1,0 +1,243 @@
+<! doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Element version of Rock Paper Scissors">
+	    <meta name="designer" content="Emili Ribakov">
+	    <meta name="keywords" content="game, rock, paper, scissors, elements, battle, player">
+        <title>The Element Game: Ai Mode</title>
+        <style>
+            #start {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    </head>
+   
+    <body>
+    <div id="container">
+        <h1 class="marginTitle">The Element Game: 1 Player</h1>
+        
+        <form name="rounds" method="post" onsubmit="return roundnum()" id="round">
+            <p>How many score would you like to play up to?</p>
+            <p><input type="number" id="roundchoice" name="r1" min="0" id="limit" /></p>
+            <p> <button type="submit" value="process">Process Form</button> <button type="reset" value="reset">Reset Form</button> </p>
+        </form>
+
+        <form name="g1" method="post" onsubmit="return game()" id="start">
+            <p>What will you choose?</p>
+            <p> <input type="radio" id="water" name="c1" value="water" required/>Water </p>
+            <p> <input type="radio" id="fire" name="c1" value="fire">Fire </p>
+            <p> <input type="radio" id="electricity" name="c1" value="electricity">Electricity </p>
+            <p> <input type="radio" id="air" name="c1" value="air">Air </p>
+            <p> <input type="radio" id="earth" name="c1" value="earth">Earth </p>
+
+            <p> <button type="submit" value="process">Process Form</button> <button type="reset" value="reset">Reset Form</button> </p>
+
+        </form>
+
+        <h3 id="gameresult"  class="marginTitle"></h3>
+        <div id="center">
+        <figure id="aichoice"></figure>
+        <figure id="personchoice"></figure>
+        </div>
+        <footer>
+            <p>Website Designed and Coded By: Emili Ribakov; 2023</p>
+            <p>Email: <a href="#">emili.ribakov24@ycdsbk12.ca</a></p>
+        </footer>
+    </div>
+    </body> 
+</html>
+<script>
+/* score for ai 
+score for player
+at the end if statemebnt if the score reached a certain number then direct to anither website*/
+
+    
+
+    function roundnum() {
+        document.getElementById("round").style.display = "none";
+        document.getElementById("start").style.display = "block";
+        return false;
+    }
+
+    function generator() {
+        var minnum = 1;
+        var maxnum = 5;
+        var ainum = Math.floor(Math.random() * (maxnum - 1 + 1)) + minnum;
+
+        return(ainum);
+
+    }
+
+    var aiscore = 0;
+    var playerscore = 0; 
+
+    function game () {
+
+        var painum = generator();
+        var result = document.getElementById("gameresult");
+        var pic1 = document.getElementById("aichoice");
+        var pic2 = document.getElementById("personchoice");
+        var rounds = parseInt(document.rounds.r1.value)
+        
+
+        if (painum == 1 && document.getElementById("water").checked) {
+            result.innerHTML = "Draw";
+        } else if (painum == 2 && document.getElementById("fire").checked) {
+            result.innerHTML = "Draw";
+        } else if (painum == 3 && document.getElementById("electricity").checked) {
+            result.innerHTML = "Draw";
+        } else if (painum == 4 && document.getElementById("air").checked) {
+            result.innerHTML = "Draw";
+        } else if (painum == 5 && document.getElementById("earth").checked) {
+            result.innerHTML = "Draw";
+        
+        
+        } else if (painum == 1 && document.getElementById("fire").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 1 && document.getElementById("earth").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 2 && document.getElementById("earth").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 2 && document.getElementById("electricity").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 3 && document.getElementById("water").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 3 && document.getElementById("air").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 4 && document.getElementById("fire").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 4 && document.getElementById("water").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 5 && document.getElementById("air").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        } else if (painum == 5 && document.getElementById("electricity").checked) {
+            result.innerHTML = "You Loose :(";
+            aiscore = aiscore + 1;
+        
+    
+        
+        } else if (painum == 1 && document.getElementById("air").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 1 && document.getElementById("electricity").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 2 && document.getElementById("water").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 2 && document.getElementById("air").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 3 && document.getElementById("fire").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 3 && document.getElementById("earth").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 4 && document.getElementById("earth").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 4 && document.getElementById("electricity").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 5 && document.getElementById("fire").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+        } else if (painum == 5 && document.getElementById("water").checked) {
+            result.innerHTML = "You Win :)";
+            playerscore = playerscore + 1;
+
+        }
+
+
+        if (painum == 1) {
+            pic1.innerHTML = "The generated choice was: <p class='resultImage'><img src='images/water.png' alt='water symbol' width='150' height='150'/></p>"
+        } else if (painum == 2) {
+            pic1.innerHTML = "The generated choice was: <p class='resultImage'><img src='images/fire.png' alt='fire symbol' width='150' height='150'/></p>"
+        } else if (painum == 3) {
+            pic1.innerHTML = "The generated choice was:<p class='resultImage'><img src='images/electricity.png' alt='electricity symbol' width='150' height='150'/></p>"
+        } else if (painum == 4) {
+            pic1.innerHTML = "The generated choice was:<p class='resultImage'><img src='images/air.png' alt='air symbol' width='150' height='150'/></p>"
+        } else if (painum == 5) {
+            pic1.innerHTML = "The generated choice was:<p class='resultImage'><img src='images/earth.png' alt='earth symbol' width='150' height='150'/></p>"
+        }
+
+        if (document.getElementById("water").checked) {
+            pic2.innerHTML = "You chose:<p class='resultImage'><img src='images/water.png' alt='water symbol' width='150' height='150'/></p>"
+        } else if (document.getElementById("fire").checked) {
+            pic2.innerHTML = "You chose:<p class='resultImage'><img src='images/fire.png' alt='fire symbol' width='150' height='150'/></p>"
+        } else if (document.getElementById("electricity").checked) {
+            pic2.innerHTML = "You chose:<p class='resultImage'><img src='images/electricity.png' alt='electricity symbol' width='150' height='150'/></p>"
+        } else if (document.getElementById("air").checked) {
+            pic2.innerHTML = "You chose:<p class='resultImage'><img src='images/air.png' alt='air symbol' width='150' height='150'/></p>"
+        } else if (document.getElementById("earth").checked) {
+            pic2.innerHTML = "You chose:<p class='resultImage'><img src='images/earth.png' alt='earth symbol' width='150' height='150'/></p>"
+        }
+
+        //console.log('rounds:', rounds)
+        //console.log('player:', playerscore)
+        //console.log('ai:', aiscore)
+
+
+        if (aiscore == rounds) {
+           // alert("hello")
+            window.location = "A4_RPS_Game_ai_winner.html";
+        } else if (playerscore == rounds) {
+           // alert("bye")
+            window.location = "A4_RPS_Game_player_winner.html";
+        }
+
+        return false;
+    }
+/* Add a score board*/
+
+</script>
+
+
+<!--
+water: 1 
+fire: 2
+electricity: 3
+air: 4
+earth: 5
+
+water: 
+kills: fire, earth
+dies: air, electricity
+
+fire:
+kills: earth, electricity
+dies: water, air
+
+electricity: 
+kills: water, air
+dies: fire, earth
+
+air:
+kills: fire, water 
+dies: earth, electricity
+
+earth: 
+kills: air, electricity
+dies: fire, water
+
+
+initial website: three pages: introduction, rules, game 
+
+game page: choice between ai or against friend + page on rules +intro
+    ai page: difficulty choice (slider) through 10 
+    player page: name stuff
+-->
+
+
