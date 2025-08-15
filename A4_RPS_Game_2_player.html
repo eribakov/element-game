@@ -26,13 +26,13 @@
     <div id="container">
         <h1 class="marginTitle">The Element Game: 2 Player</h1>
 
-        <form name="rounds" method="post" onsubmit="return roundnum()" id="round">
+        <form name="rounds" onsubmit="return roundnum()" id="round">
             <p>What score would you like to play up to?</p>
             <p><input type="number" id="roundchoice" name="r1" min="0" /></p>
             <p> <button type="submit" value="process">Submit</button> </p>
         </form>
 
-        <form name="p1" method="post" onsubmit="return player1()" id="form1">
+        <form name="p1" onsubmit="return player1()" id="form1">
             <h3>Player 1:</h3>
             <p>What will you choose?</p>
             <p> <input type="radio" id="" water"1" name="c2" value="water" required />Water </p>
@@ -45,7 +45,7 @@
         </form>
 
 
-        <form name="p2" method="post" onsubmit="return player2()" id="form2">
+        <form name="p2" onsubmit="return player2()" id="form2">
             <h3>Player 2:</h3>
             <p>What will you choose?</p>
             <p> <input type="radio" id="" water"2" name="c3" value="water" required />Water</p>

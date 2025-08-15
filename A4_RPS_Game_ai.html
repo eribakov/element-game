@@ -22,13 +22,13 @@
     <div id="container">
         <h1 class="marginTitle">The Element Game: 1 Player</h1>
 
-        <form name="rounds" method="post" onsubmit="return roundnum()" id="round">
+        <form name="rounds" onsubmit="return roundnum()" id="round">
             <p>What score would you like to play up to?</p>
             <p><input type="number" id="roundchoice" name="r1" min="0" id="limit" /></p>
             <p> <button type="submit" value="process">Submit</button> </p>
         </form>
 
-        <form name="g1" method="post" onsubmit="return game()" id="start">
+        <form name="g1" onsubmit="return game()" id="start">
             <p>What will you choose?</p>
             <p> <input type="radio" id="water" name="c1" value="water" required />Water </p>
             <p> <input type="radio" id="fire" name="c1" value="fire">Fire </p>
