@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>The Element Game Front Page</title>
+    <meta name="description" content="Element version of Rock Paper Scissors">
+    <meta name="designer" content="Emili Ribakov">
+    <meta name="keywords" content="game, rock, paper, scissors, elements, battle, player">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+</head>
+
+<body>
+    <div id="container">
+
+        <h1 class="marginTitle">Welcome To The Element Game</h1>
+        <nav>
+            <ul>
+                <li><a href="A4_RPS_about_the_game.html">What is The Element Game</a></li>
+                <li><a href="A4_RPS_instructions.html">Instructions</a></li>
+            </ul>
+        </nav>
+        <h3 class="marginTitle">Ever played rock paper scissors but thought it was too easy for your skill? This game is
+            for you!</h3>
+
+        <p class="titleImage"><img src="images/introphoto.png" alt="photo of all elements in battle" height="300"></p>
+
+        <form name="play" method="post" onsubmit="return playchoice()" id="mode">
+            <p>Hello, before entering the game, please let us know if you are playing alone or with a friend. </p>
+            <p> <input type="radio" id="alone" name="c2" value="alone" required /> Alone </p>
+            <p> <input type="radio" id="friend" name="c2" value="friend"> With a friend </p>
+
+            <p> <button type="submit" value="process">Submit</button> </p>
+        </form>
+        <footer>
+            <p>Website Designed and Coded By: Emili Ribakov; 2023</p>
+            <p>Email: <a href="#">emili.ribakov24@ycdsbk12.ca</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
+<script>
+
+    function playchoice() {
+
+        var choice = document.getElementById("choice");
+
+        if (document.getElementById("alone").checked) {
+            window.location = "A4_RPS_Game_ai.html";
+        } else if (document.getElementById("friend").checked) {
+            window.location = "A4_RPS_Game_2_player.html";
+        }
+
+        return false;
+    }
+
+</script>
