@@ -35,9 +35,9 @@
         <form name="p1" onsubmit="return player1()" id="form1">
             <h3>Player 1:</h3>
             <p>What will you choose?</p>
-            <p> <input type="radio" id="" water"1" name="c2" value="water" required />Water </p>
+            <p> <input type="radio" id="water1" name="c2" value="water" required />Water </p>
             <p> <input type="radio" id="fire1" name="c2" value="fire">Fire </p>
-            <p> <input type="radio" id="" electricity"1" name="c2" value="" electricity"">Electricity</p>
+            <p> <input type="radio" id="electricity1" name="c2" value="electricity">Electricity</p>
             <p> <input type="radio" id="air1" name="c2" value="air">Air </p>
             <p> <input type="radio" id="earth1" name="c2" value="earth">Earth </p>
 
@@ -48,9 +48,9 @@
         <form name="p2" onsubmit="return player2()" id="form2">
             <h3>Player 2:</h3>
             <p>What will you choose?</p>
-            <p> <input type="radio" id="" water"2" name="c3" value="water" required />Water</p>
+            <p> <input type="radio" id="water2" name="c3" value="water" required />Water</p>
             <p> <input type="radio" id="fire2" name="c3" value="fire">Fire </p>
-            <p> <input type="radio" id="" electricity"2" name="c3" value="electricity">Electricity</p>
+            <p> <input type="radio" id="electricity2" name="c3" value="electricity">Electricity</p>
             <p> <input type="radio" id="air2" name="c3" value="air">Air </p>
             <p> <input type="radio" id="earth2" name="c3" value="earth">Earth </p>
 
@@ -83,6 +83,18 @@
         document.getElementById("form2").style.display = "block";
         return false;
     }
+
+    // Prevent accidental form submissions
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            const activeElement = document.activeElement;
+            // Only allow Enter to submit if we're on a submit button
+            if (activeElement.type !== 'submit' && activeElement.tagName !== 'BUTTON') {
+                event.preventDefault();
+                return false;
+            }
+        }
+    });
 
     var player1score = 0;
     var player2score = 0;
@@ -195,7 +207,7 @@
             result.innerHTML = "Player 2 Wins!";
             player2score = player2score + 1
 
-        } else if (p1choice == earth && p2choice == "water") {
+        } else if (p1choice == "earth" && p2choice == "water") {
             result.innerHTML = "Player 2 Wins!";
             player2score = player2score + 1
 

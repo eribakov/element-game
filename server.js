@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const config = require('./config');
 const app = express();
-const PORT = config.port;
+const PORT = 3005;
 
 // Basic logging middleware
 if (config.enableLogging) {
